@@ -1,0 +1,71 @@
+div#setting-container {
+    width: 100%;
+    height: 100%;
+    display: table;
+    table-layout: fixed;
+    text-align: center;
+}
+
+.fadein,
+#fadein {
+    animation: fadein 5s;
+}
+
+.fadeout #fadeout {
+    animation: fadeout 5s;
+}
+
+div#setting-container div.center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div#setting-container h1#title {
+    color: white;
+    font-size: 6vw;
+    margin: 0%;
+    padding: 0%;
+}
+
+div#setting-container p#description {
+    color: white;
+    font-size: 2.5vw;
+    margin: 0%;
+    padding: 0%;
+    margin-bottom: 1.5vw;
+}
+
+/* 생기는 애니메이션 */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 사라지는 애니메이션 */
+@keyframes fadeout {
+    /* Safari and Chrome */
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+div#setting-container input#nameInput {
+    text-align: center;
+    width: 31vw;
+    height: 4vw;
+    font-size: 2vw;
+    border: 0;
+    outline: none;
+    border-style: 0%;
+    background-color: transparent;
+    color: white;
+    font-weight: 500;
+    border-bottom: 2px solid white;
+}

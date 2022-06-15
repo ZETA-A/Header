@@ -1,0 +1,170 @@
+/* 
+버튼 부분 오른쪽 아래 위치지정
+*/
+button#modalPopupBtn {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0ch;
+    width: 8vh;
+    height: 8vh;
+    max-height: 7vw;
+    max-width: 7vw;
+    border-radius: 30px;
+    margin: 0%;
+    padding: 0%;
+}
+
+button#modalPopupBtn img#btnImage {
+    width: 3vw;
+    height: auto;
+    margin: 0%;
+    padding: 0%;
+}
+
+div.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+}
+
+div.modal.show {
+    display: block;
+}
+
+div.modalBody {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 25vw;
+    min-width: 400px;
+    max-width: 25vw;
+    height: 70vh;
+    min-height: 200px;
+    max-height: 70vh;
+
+    overflow: auto;
+
+    padding: 4vw;
+
+    text-align: center;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+h2#modalTitle {
+    font-size: 2.5vw;
+    padding: 0%;
+    margin: 0%;
+    padding-top: 3vh;
+}
+
+h3.modalCategory {
+    text-align: left;
+    font-size: 2vw;
+    margin-bottom: 1vw;
+}
+
+div#modalHR {
+    display: inline-flex;
+    width: 100%;
+    height: auto;
+}
+
+p.modalDescription {
+    margin: 0%;
+    text-align: left;
+    font-size: 1vw;
+    font-weight: 400;
+}
+
+div#modalLeft {
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+
+div#modalRight {
+    width: 50%;
+    float: right;
+    text-align: right;
+}
+
+div#modalRight input#nameInput {
+    width: 70%;
+    height: 1.68vw;
+    font-size: 0.8vw;
+    border: 0ch;
+    border-radius: 20px;
+    outline: none;
+    background-color: rgb(233, 233, 233);
+    text-align: center;
+}
+
+div.modal input.modalBtn {
+    margin: auto;
+    padding: 0%;
+    width: 3vw;
+    height: 1.68vw;
+    border-radius: 34px;
+    background-color: #2196f3;
+    border: none;
+    font-size: 0.8vw;
+    color: white;
+    cursor: pointer;
+}
+
+div.modal input.modalBtn:hover {
+    background-color: #1b7ecf;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* dark mode인 경우의 CSS */
+    div.modalBody {
+        background-color: rgb(33, 33, 33);
+    }
+    h2#modalTitle {
+        color: white;
+    }
+    h3.modalCategory {
+        color: white;
+    }
+    p.modalDescription {
+        color: white;
+    }
+    div.modal {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    /* light mode인 경우의 CSS */
+    div.modalBody {
+        background-color: rgb(255, 255, 255);
+    }
+
+    h2#modalTitle {
+        color: black;
+    }
+    h3.modalCategory {
+        color: black;
+    }
+    p.modalDescription {
+        color: black;
+    }
+    div.modal{
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}

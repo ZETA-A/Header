@@ -1,27 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>New Tab</title>
-  <link rel="stylesheet" href="app.css" />
-</head>
-<body>
-  <div class="container">
-    <p id="day" class="day"></p>
-    <div id="clock" class="clock"></div>
-
-    <hr class="divider" />
-
-    <p class="title">Chrome Extension is Ready!</p>
-    <p class="subtitle">Start by updating <code>index.html</code></p>
-  </div>
-  <script src="app.js"></script>
-
-  <!--
-    This HTML file is a template for overriding pages like New Tab, Bookmarks, or History page.
-
-    To begin the development, run `npm run watch`.
-    To create a production bundle, use `npm run build`.
-  -->
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>새 탭</title>
+        <link rel="stylesheet" href="app.css" />
+    </head>
+    <body>
+        <div id="setting-container" class="fadein" hidden>
+            <div class="center">
+                <h1 id="title">안녕하세요!</h1>
+                <p id="description">당신의 이름은 무엇인가요?</p>
+                <form id="settingForm">
+                    <input
+                        id="nameInput"
+                        type="text"
+                        placeholder="당신의 이름을 알려주세요!"
+                        required
+                        minlength="1"
+                    />
+                </form>
+            </div>
+        </div>
+        <div class="container" hidden>
+            <div class="center">
+                <div class="modal">
+                    <div class="modalBody">
+                        <h2 id="modalTitle">설정</h2>
+                        <h3 class="modalCategory">유저정보</h3>
+                        <div id="modalHR">
+                            <form style="width: 100%; height: 100%">
+                                <div id="modalLeft">
+                                    <p class="modalDescription">이름</p>
+                                </div>
+                                <div id="modalRight">
+                                    <input
+                                        id="nameInput"
+                                        type="text"
+                                        placeholder="이름을 입력해주세요"
+                                        required
+                                    />
+                                    <button type="submit" class="modalBtn">제출</button>
+                                </div>
+                            </form>
+                        </div>
+                        <h3 class="modalCategory">시계</h3>
+                        <div id="modalHR">
+                            <div id="modalLeft">
+                                <p class="modalDescription">24시간 형식</p>
+                            </div>
+                            <div id="modalRight">
+                                <label class="switch">
+                                    <input id="timeSet24" type="checkbox" />
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <h3 class="modalCategory">날씨(업데이트 예정)</h3>
+                        <div id="modalHR">
+                            <div id="modalLeft">
+                                <p class="modalDescription">위치정보이용</p>
+                            </div>
+                            <div id="modalRight">
+                                <label class="switch">
+                                    <input type="checkbox" />
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div id="modalHR">
+                            <div id="modalLeft">
+                                <p class="modalDescription">기상청 선택</p>
+                            </div>
+                            <div id="modalRight">
+                                <select name="" id="">
+                                    <option value="koreaWeatherGov">
+                                        한국 기상청
+                                    </option>
+                                    <option value="norwayWeatherGov">
+                                        노르웨이 기상청
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <h3 class="modalCategory">인터넷(업데이트 예정)</h3>
+                        <div id="modalHR">
+                            <div id="modalLeft">
+                                <p class="modalDescription">
+                                    검색엔진 선택(구글 네이버 다음 줌)
+                                </p>
+                            </div>
+                            <div id="modalRight">
+                                <label class="switch">
+                                    <input type="checkbox" />
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="searchModal">
+                    <div class="searchBody">
+                        <form>
+                            <img
+                                src="./image/browserIcon/googleIcon.png"
+                                alt="브라우저 아이콘"
+                            />
+                            <input
+                                type="text"
+                                placeholder="검색어를 입력해주세요"
+                            />
+                        </form>
+                    </div>
+                </div>
+                <div id="clock" class="clock"></div>
+                <p id="greeting"></p>
+                <div class="shortcut">
+                    <button id="browserSearch">
+                        <img src="./image/searchIcon.png" />
+                    </button>
+                    <button id="browserOne">
+                        <img src="./image/plusIcon.png" />
+                    </button>
+                    <button id="browserTwo">
+                        <img src="./image/plusIcon.png" />
+                    </button>
+                    <button id="browserThree">
+                        <img src="./image/plusIcon.png" />
+                    </button>
+                </div>
+                <div>
+                    <button id="modalPopupBtn">
+                        <img src="./image/modal.svg" id="btnImage" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
 </html>

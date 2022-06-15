@@ -1,0 +1,23 @@
+{
+    "settingDB": [
+        {
+            "userName": "example",
+            "userBirth": "example"
+        },
+        {
+            "time24": "0 or 1",
+            "timeSet": "dawn, morning, day, evening and night"
+        },
+        {
+            "weatherEnable": "0 or 1",
+            "weatherComputer": "0, 1(korea) and 2(norway)",
+            "weatherLocation": "geo location"
+        },
+        {
+            "browserSearch": "google : https://www.google.com/search?q=${encodeURI('검색할 문장')} / 네이버 : https://search.naver.com/search.naver?query=${encodeURI('검색할 문장')} / 다음 : https://search.daum.net/search?q=${encodeURI('검색할 문장')}",
+            "browserOne": "",
+            "browserTwo": "",
+            "browserThree": ""
+        }
+    ]
+}

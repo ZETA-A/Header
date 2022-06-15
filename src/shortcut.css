@@ -1,0 +1,12 @@
+div.container div.shortcut button {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 0.7vw;
+    border-style: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+div.container div.shortcut {
+    margin-top: 3vw;
+}

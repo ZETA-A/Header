@@ -1,0 +1,83 @@
+div.searchModal {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+}
+
+div.searchModal.show {
+    display: block;
+}
+
+div.searchBody {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 45vw;
+    height: 1vw;
+    max-height: 1vw;
+
+    overflow: auto;
+
+    padding: 2vw;
+
+    text-align: center;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 15vw;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+@media (prefers-color-scheme: dark) {
+    div.settingBody {
+        background-color: rgb(33, 33, 33);
+    }
+    div.settingModal {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    /* light mode인 경우의 CSS */
+    div.settingBody {
+        background-color: rgb(255, 255, 255);
+    }
+    div.settingModal {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}
+
+div.searchBody img {
+    float: left;
+    width: 3vw;
+    height: 3vw;
+    margin-top: -1vw;
+    margin-left: -1vw;
+    cursor: pointer;
+}
+
+div.searchBody input {
+    float: center;
+    margin-top: -1.5vw;
+    width: 40vw;
+    height: 4vw;
+    text-align: center;
+    background-color: none;
+    border-style: none;
+    font-size: 2vw;
+}
+
+div.searchBody input:focus {
+    outline: none;
+}
+
+div.searchBody form {
+    height: 0vw;
+}
