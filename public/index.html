@@ -25,77 +25,79 @@
             <div class="center">
                 <div class="modal">
                     <div class="modalBody">
-                        <h2 id="modalTitle">설정</h2>
-                        <h3 class="modalCategory">유저정보</h3>
-                        <div id="modalHR">
-                            <form style="width: 100%; height: 100%">
+                        <div id="overflow">
+                            <h2 id="modalTitle">설정</h2>
+                            <h3 class="modalCategory">유저정보</h3>
+                            <div id="modalHR">
+                                <form style="width: 100%; height: 100%">
+                                    <div id="modalLeft">
+                                        <p class="modalDescription">이름</p>
+                                    </div>
+                                    <div id="modalRight">
+                                        <input
+                                            id="nameInput"
+                                            type="text"
+                                            placeholder="이름을 입력해주세요"
+                                            required
+                                        />
+                                    </div>
+                                </form>
+                            </div>
+                            <h3 class="modalCategory">시계</h3>
+                            <div id="modalHR">
                                 <div id="modalLeft">
-                                    <p class="modalDescription">이름</p>
+                                    <p class="modalDescription">24시간 형식</p>
                                 </div>
                                 <div id="modalRight">
-                                    <input
-                                        id="nameInput"
-                                        type="text"
-                                        placeholder="이름을 입력해주세요"
-                                        required
-                                    />
-                                    <button type="submit" class="modalBtn">제출</button>
+                                    <label class="switch">
+                                        <input id="timeSet24" type="checkbox" />
+                                        <span class="slider round"></span>
+                                    </label>
                                 </div>
-                            </form>
-                        </div>
-                        <h3 class="modalCategory">시계</h3>
-                        <div id="modalHR">
-                            <div id="modalLeft">
-                                <p class="modalDescription">24시간 형식</p>
                             </div>
-                            <div id="modalRight">
-                                <label class="switch">
-                                    <input id="timeSet24" type="checkbox" />
-                                    <span class="slider round"></span>
-                                </label>
+                            <h3 class="modalCategory">날씨(업데이트 예정)</h3>
+                            <div id="modalHR">
+                                <div id="modalLeft">
+                                    <p class="modalDescription">위치정보이용</p>
+                                </div>
+                                <div id="modalRight">
+                                    <label class="switch">
+                                        <input type="checkbox" />
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                        <h3 class="modalCategory">날씨(업데이트 예정)</h3>
-                        <div id="modalHR">
-                            <div id="modalLeft">
-                                <p class="modalDescription">위치정보이용</p>
+                            <div id="modalHR">
+                                <div id="modalLeft">
+                                    <p class="modalDescription">기상청 선택</p>
+                                </div>
+                                <div id="modalRight">
+                                    <select name="" id="">
+                                        <option value="koreaWeatherGov">
+                                            한국 기상청
+                                        </option>
+                                        <option value="norwayWeatherGov">
+                                            노르웨이 기상청
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
-                            <div id="modalRight">
-                                <label class="switch">
-                                    <input type="checkbox" />
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div id="modalHR">
-                            <div id="modalLeft">
-                                <p class="modalDescription">기상청 선택</p>
-                            </div>
-                            <div id="modalRight">
-                                <select name="" id="">
-                                    <option value="koreaWeatherGov">
-                                        한국 기상청
-                                    </option>
-                                    <option value="norwayWeatherGov">
-                                        노르웨이 기상청
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-                        <h3 class="modalCategory">인터넷(업데이트 예정)</h3>
-                        <div id="modalHR">
-                            <div id="modalLeft">
-                                <p class="modalDescription">
-                                    검색엔진 선택(구글 네이버 다음 줌)
-                                </p>
-                            </div>
-                            <div id="modalRight">
-                                <label class="switch">
-                                    <input type="checkbox" />
-                                    <span class="slider round"></span>
-                                </label>
+                            <h3 class="modalCategory">인터넷(업데이트 예정)</h3>
+                            <div id="modalHR">
+                                <div id="modalLeft">
+                                    <p class="modalDescription">
+                                        검색엔진 선택(구글 네이버 다음 줌)
+                                    </p>
+                                </div>
+                                <div id="modalRight">
+                                    <label class="switch">
+                                        <input type="checkbox" />
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
+                        <button class="modalBtn" id="saveBtn">저장</button>
                     </div>
                 </div>
                 <div class="searchModal">

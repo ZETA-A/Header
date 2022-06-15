@@ -5,7 +5,6 @@ const mainModalBtn = document.querySelector("#modalPopupBtn");
 
 // 설정 내 부분
 const modalNameInput = document.querySelector("div.modal input#nameInput");
-const modalNameSubmit = document.querySelector("div.modal input")
 const modalTimesetCheckbox = document.querySelector(
     "div.modal input#timeSet24"
 );

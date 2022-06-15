@@ -51,8 +51,6 @@ div.modalBody {
     min-height: 200px;
     max-height: 70vh;
 
-    overflow: auto;
-
     padding: 4vw;
 
     text-align: center;
@@ -62,6 +60,12 @@ div.modalBody {
     box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
 
     transform: translateX(-50%) translateY(-50%);
+}
+
+#overflow {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
 }
 
 h2#modalTitle {
@@ -103,7 +107,7 @@ div#modalRight {
 }
 
 div#modalRight input#nameInput {
-    width: 70%;
+    width: 100%;
     height: 1.68vw;
     font-size: 0.8vw;
     border: 0ch;
@@ -113,7 +117,7 @@ div#modalRight input#nameInput {
     text-align: center;
 }
 
-div.modal input.modalBtn {
+div.modal button.modalBtn {
     margin: auto;
     padding: 0%;
     width: 3vw;
@@ -124,6 +128,18 @@ div.modal input.modalBtn {
     font-size: 0.8vw;
     color: white;
     cursor: pointer;
+}
+
+div.modal button#saveBtn {
+    width: 5vw;
+    height: 2vw;
+    position: fixed;
+    bottom: 1vw;
+    right: 1vw;
+    cursor: pointer;
+    border: 0ch;
+    margin: 0%;
+    padding: 0%;
 }
 
 div.modal input.modalBtn:hover {
