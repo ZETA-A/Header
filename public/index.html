@@ -89,7 +89,7 @@
                             <div class="hr">
                                 <div class="right">별명</div>
                                 <div class="left">
-                                    <input type="text" id="inputText" />
+                                    <input type="text" class="inputText" />
                                 </div>
                             </div>
                             <div class="modalFooter">
@@ -98,11 +98,21 @@
                         </div>
                         <div class="clockSetting" hidden>
                             <h2 id="title">시계</h2>
-                            <div class="hr">
-                                <div class="right">별명</div>
-                                <div class="left">
-                                    <input type="text" id="inputText" />
-                                </div>
+                            <div id="selectTime">
+                                <input
+                                    type="radio"
+                                    name="selectTime"
+                                    value="0"
+                                    id="to12"
+                                />
+                                <label for="to12" id="to12">12시간 형식</label>
+                                <input
+                                    type="radio"
+                                    name="selectTime"
+                                    value="1"
+                                    id="to24"
+                                />
+                                <label for="to24" id="to24">24시간 형식</label>
                             </div>
                             <div class="modalFooter">
                                 <button class="backBtn">← 이전</button>
@@ -110,22 +120,100 @@
                         </div>
                         <div class="weather" hidden>
                             <h2 id="title">날씨</h2>
-                            <div class="hr">
-                                <div class="right">별명</div>
-                                <div class="left">
-                                    <input type="text" id="inputText" />
-                                </div>
-                            </div>
+                            <h3 id="updateWait">업데이트 준비 중</h3>
                             <div class="modalFooter">
                                 <button class="backBtn">← 이전</button>
                             </div>
                         </div>
                         <div class="internet" hidden>
                             <h2 id="title">인터넷</h2>
+                            <div class="downhr">
+                                <div class="right">사용할 검색엔진</div>
+                                <div class="left"></div>
+                                <div class="down">
+                                    <input
+                                        type="radio"
+                                        name="searchEngine"
+                                        value="google"
+                                        id="google"
+                                    />
+                                    <label id="google" for="google"
+                                        ><img
+                                            src="./image/browserIcon/googleIcon.png"
+                                            alt="구글"
+                                        />
+                                        구글</label
+                                    >
+                                    <input
+                                        type="radio"
+                                        name="searchEngine"
+                                        value="naver"
+                                        id="naver"
+                                    />
+                                    <label id="naver" for="naver"
+                                        ><img
+                                            src="./image/browserIcon/naverIcon.png"
+                                            alt="네이버"
+                                        />
+                                        네이버</label
+                                    >
+                                    <input
+                                        type="radio"
+                                        name="searchEngine"
+                                        value="daum"
+                                        id="daum"
+                                    />
+                                    <label id="daum" for="daum"
+                                        ><img
+                                            src="./image/browserIcon/daumIcon.png"
+                                            alt="다음"
+                                        />
+                                        다음</label
+                                    >
+                                    <input
+                                        type="radio"
+                                        name="searchEngine"
+                                        value="bing"
+                                        id="bing"
+                                    />
+                                    <label id="bing" for="bing"
+                                        ><img
+                                            src="./image/browserIcon/bingIcon.png"
+                                            alt="빙"
+                                        />
+                                        빙</label
+                                    >
+                                    <input
+                                        type="radio"
+                                        name="searchEngine"
+                                        value="zum"
+                                        id="zum"
+                                    />
+                                    <label id="zum" for="zum"
+                                        ><img
+                                            src="./image/browserIcon/zumIcon.png"
+                                            alt="줌"
+                                        />
+                                        줌</label
+                                    >
+                                </div>
+                            </div>
                             <div class="hr">
-                                <div class="right">별명</div>
+                                <div class="right">1번 바로가기</div>
                                 <div class="left">
-                                    <input type="text" id="inputText" />
+                                    <input type="text" class="inputText" id="browserOne"/>
+                                </div>
+                            </div>
+                            <div class="hr">
+                                <div class="right">2번 바로가기</div>
+                                <div class="left">
+                                    <input type="text" class="inputText" id="browserTwo"/>
+                                </div>
+                            </div>
+                            <div class="hr">
+                                <div class="right">3번 바로가기</div>
+                                <div class="left">
+                                    <input type="text" class="inputText" id="browserThree"/>
                                 </div>
                             </div>
                             <div class="modalFooter">

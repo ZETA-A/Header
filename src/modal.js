@@ -66,6 +66,39 @@ const mainModalInternetImg = document.querySelector(
     "div.modal div#category img#internetSetting"
 );
 
+// Modal 일반 페이지
+const generalModalNameInput = document.querySelector(
+    "div.modal div.general input.inputText"
+);
+
+// Modal 인터넷 페이지
+const internetModalRadioBoxGoogle = document.querySelector(
+    "div.modal div.internet div.downhr input#google"
+);
+const internetModalRadioBoxNaver = document.querySelector(
+    "div.modal div.internet div.downhr input#naver"
+);
+const internetModalRadioBoxDaum = document.querySelector(
+    "div.modal div.internet div.downhr input#daum"
+);
+const internetModalRadioBoxBing = document.querySelector(
+    "div.modal div.internet div.downhr input#bing"
+);
+const internetModalRadioBoxZum = document.querySelector(
+    "div.modal div.internet div.downhr input#zum"
+);
+
+// Modal 인터넷 바로가기
+const internetModalOne = document.querySelector(
+    "div.modal div.internet div.hr input#browserOne"
+);
+const internetModalTwo = document.querySelector(
+    "div.modal div.internet div.hr input#browserTwo"
+);
+const internetModalThree = document.querySelector(
+    "div.modal div.internet div.hr input#browserThree"
+);
+
 function setSettingModal() {
     mainModalBtn.addEventListener("click", () => {
         mainModal.classList.toggle("show");
@@ -88,6 +121,7 @@ function setSettingModal() {
     generalModalBackBtn.addEventListener("click", () => {
         mainModalMain.hidden = false;
         generalModalMain.hidden = true;
+        saveGeneral();
     });
 
     clockModalBackBtn.addEventListener("click", () => {
@@ -103,6 +137,7 @@ function setSettingModal() {
     internetModalBackBtn.addEventListener("click", () => {
         mainModalMain.hidden = false;
         internetModalMain.hidden = true;
+        saveInternet();
     });
 
     mainModalGeneral.addEventListener("click", (event) => {
@@ -148,6 +183,53 @@ function setSettingModal() {
             internetModalMain.hidden = false;
         }
     });
+
+    loadSettingModal();
+}
+
+function loadSettingModal() {
+    let settingDB = JSON.parse(localStorage.getItem("settingDB"));
+    // 일반 페이지 이름 로드
+    generalModalNameInput.value = settingDB[0].userName;
+
+    // 인터넷 페이지 리디오박스 바로가기 로드
+    if (settingDB[3].browserEngine === "google") {
+        internetModalRadioBoxGoogle.checked = true;
+    } else if (settingDB[3].browserEngine === "naver") {
+        internetModalRadioBoxNaver.checked = true;
+    }
+    if (settingDB[3].browserEngine === "daum") {
+        internetModalRadioBoxDaum.checked = true;
+    } else if (settingDB[3].browserEngine === "bing") {
+        internetModalRadioBoxBing.checked = true;
+    } else if (settingDB[3].browserEngine === "zum") {
+        internetModalRadioBoxZum.checked = true;
+    }
+
+    // 인터넷 페이지 바로가기 로드
+    internetModalOne.value = settingDB[3].browserOne;
+    internetModalTwo.value = settingDB[3].browserTwo;
+    internetModalThree.value = settingDB[3].browserThree;
+}
+
+function saveGeneral() {
+    let settingDB = JSON.parse(localStorage.getItem("settingDB"));
+    settingDB[0].userName = generalModalNameInput.value;
+    localStorage.setItem("settingDB", JSON.stringify(settingDB));
+}
+
+function saveInternet() {
+    let settingDB = JSON.parse(localStorage.getItem("settingDB"));
+    let browserEngine = document.querySelector(
+        'div.modal div.internet div.downhr input[name="searchEngine"]:checked'
+    ).value;
+
+    settingDB[3].browserEngine = browserEngine;
+    settingDB[3].browserOne = internetModalOne.value;
+    settingDB[3].browserTwo = internetModalTwo.value;
+    settingDB[3].browserThree = internetModalThree.value;
+
+    localStorage.setItem("settingDB", JSON.stringify(settingDB));
 }
 
 export default setSettingModal;

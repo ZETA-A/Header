@@ -5,13 +5,13 @@ function setShortcut() {
 
     let settingDB = JSON.parse(localStorage.getItem("settingDB"));
 
-    if (settingDB[3].browserOne !== "undefined" || "") {
+    if (settingDB[3].browserOne !== "undefined" || "" || "없음" || "none") {
         browserOne.src = `http://www.google.com/s2/favicons?domain=${settingDB[3].browserOne}`;
     }
-    if (settingDB[3].browserTwo !== "undefined" || "") {
+    if (settingDB[3].browserTwo !== "undefined" || "" || "없음" || "none") {
         browserTwo.src = `http://www.google.com/s2/favicons?domain=${settingDB[3].browserTwo}`;
     }
-    if (settingDB[3].browserThree !== "undefined" || "") {
+    if (settingDB[3].browserThree !== "undefined" || "" || "없음" || "none") {
         browserThree.src = `http://www.google.com/s2/favicons?domain=${settingDB[3].browserThree}`;
     }
 }

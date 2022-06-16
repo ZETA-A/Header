@@ -36,7 +36,6 @@ function searchEnter(event, input) {
     let settingDB = JSON.parse(localStorage.getItem("settingDB"));
     event.preventDefault();
     let link = settingDB[3].browserSearch + input;
-    console.log(link);
     location.href = link;
 }
 

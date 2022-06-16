@@ -34,6 +34,7 @@ function settingNameEnter(arg) {
     weatherObject.weatherComputer = "undefined";
     weatherObject.weatherLocation = "undefined";
 
+    browserObject.browserEngine = "google";
     browserObject.browserSearch = "https://www.google.com/search?q=";
     browserObject.browserOne = "undefined";
     browserObject.browserTwo = "undefined";
