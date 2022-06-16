@@ -24,6 +24,9 @@ button#modalPopupBtn img#btnImage {
     padding: 0%;
 }
 
+/*
+모달의 기본적인 CSS
+*/
 div.modal {
     position: absolute;
     top: 0;
@@ -51,7 +54,7 @@ div.modalBody {
     min-height: 200px;
     max-height: 70vh;
 
-    padding: 4vw;
+    padding: calc(10px + 4vw);
 
     text-align: center;
 
@@ -62,53 +65,60 @@ div.modalBody {
     transform: translateX(-50%) translateY(-50%);
 }
 
-#overflow {
-    overflow: auto;
-    width: 100%;
-    height: 100%;
-}
-
-h2#modalTitle {
-    font-size: 2.5vw;
+/* 
+제목부분
+*/
+div.modal h2#title {
+    font-size: calc(25px + 1.5vw);
     padding: 0%;
     margin: 0%;
+    margin-bottom: 1vw;
     padding-top: 3vh;
 }
 
-h3.modalCategory {
-    text-align: left;
-    font-size: 2vw;
+div.modal h3#updateWait {
+    font-size: calc(15px + 1.5vw);
+}
+
+/*
+왼쪽 오른쪽 나눌 때 사용하는거
+*/
+div.modal div.hr {
+    display: flex;
+    width: 100%;
+    margin-top: 1vw;
+}
+
+div.modal div.hr div.right {
+    width: 50%;
+    font-size: calc(10px + 0.5vw);
+}
+
+div.modal div.hr div.left {
+    width: 50%;
+}
+
+div.modal div.downhr div.right {
+    font-size: calc(10px + 0.5vw);
+    width: 50%;
+}
+
+div.modal div.downhr div.left {
+    width: 50%;
     margin-bottom: 1vw;
 }
 
-div#modalHR {
-    display: inline-flex;
+div.modal div.downhr div.down {
     width: 100%;
-    height: auto;
+    margin-bottom: 3vw;
 }
 
-p.modalDescription {
-    margin: 0%;
-    text-align: left;
-    font-size: 1vw;
-    font-weight: 400;
-}
-
-div#modalLeft {
-    width: 50%;
-    float: left;
-    text-align: left;
-}
-
-div#modalRight {
-    width: 50%;
-    float: right;
-    text-align: right;
-}
-
-div#modalRight input#nameInput {
-    width: 100%;
-    height: 1.68vw;
+/*
+인풋(텍스트) - 디자인
+*/
+div.modal div.left input.inputText {
+    width: 90%;
+    height: 100%;
     font-size: 0.8vw;
     border: 0ch;
     border-radius: 20px;
@@ -117,6 +127,13 @@ div#modalRight input#nameInput {
     text-align: center;
 }
 
+/*
+인풋(날짜) - 디자인
+*/
+
+/*
+버튼 - 디자인
+*/
 div.modal button.modalBtn {
     margin: auto;
     padding: 0%;
@@ -130,38 +147,198 @@ div.modal button.modalBtn {
     cursor: pointer;
 }
 
-div.modal button#saveBtn {
-    width: 5vw;
-    height: 2vw;
-    position: fixed;
-    bottom: 1vw;
-    right: 1vw;
-    cursor: pointer;
-    border: 0ch;
-    margin: 0%;
-    padding: 0%;
-}
-
 div.modal input.modalBtn:hover {
     background-color: #1b7ecf;
 }
 
+/*
+메인 - 카테고리 부분
+*/
+div.modal div#category {
+    display: grid;
+    place-content: center;
+    margin-top: 4vw;
+}
+
+div.modal div#category div#first {
+    display: flex;
+}
+
+div.modal div#category div#second {
+    display: flex;
+}
+
+/*
+메인 - 박스 디자인
+*/
+div.modal div.modalInbox {
+    width: 10vw;
+    height: 10vw;
+    border: 3px solid var(--inbox-border-color);
+    border-radius: 1.5vw;
+    position: relative;
+    cursor: pointer;
+}
+
+div.modal div#generalSetting {
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+}
+
+div.modal div#clockSetting {
+    --inbox-border-color: blue;
+    margin-bottom: 1vw;
+}
+
+div.modal div#weatherSetting {
+    --inbox-border-color: orange;
+    margin-right: 1vw;
+}
+
+div.modal div#internetSetting {
+    --inbox-border-color: purple;
+}
+
+/*
+메인 - 카테고리 이미지
+*/
+div.modal div.modalInbox img#generalSetting,
+div.modal div.modalInbox img#clockSetting,
+div.modal div.modalInbox img#weatherSetting,
+div.modal div.modalInbox img#internetSetting {
+    width: 4vw;
+    height: 4vw;
+    margin-top: 1vw;
+}
+
+/*
+메인 - 인박스 내 부제목
+*/
+div.modal div.modalInbox p.subtitle {
+    position: absolute;
+    bottom: 0%;
+    font-size: calc(10px + 1vw);
+    width: 100%;
+    text-align: center;
+}
+
+/*
+버튼 - 이전으로 돌아가기
+*/
+div.modal div.modalFooter button.backBtn {
+    font-size: calc(5px + 0.7vw);
+    border-radius: 3vw;
+    padding-top: 0.7vw;
+    padding-bottom: 0.7vw;
+    padding-left: 1.2vw;
+    padding-right: 1.2vw;
+    cursor: pointer;
+    position: absolute;
+    bottom: 2%;
+    left: 3%;
+}
+
+/*
+라디오박스 - 시간
+*/
+div.modal div.clockSetting div#selectTime input[type="radio"] {
+    display: none;
+}
+
+/*
+라디오박스 - 검색엔진
+*/
+div.modal div.downhr div.down input[type="radio"] {
+    display: none;
+}
+
+div.modal div.downhr div.down img {
+    width: 1vw;
+}
+
+div.modal div.downhr div.down label {
+    border: 0.1vw solid var(--searchEngine-color);
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 3vw;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 0.1vw;
+}
+
+div.modal div.downhr div.down input[type="radio"]:checked + label {
+    border: 0.3vw solid var(--searchEngine-color);
+}
+
+div.modal div.downhr div.down label#google {
+    --searchEngine-color: white;
+}
+
+div.modal div.downhr div.down label#naver {
+    --searchEngine-color: green;
+}
+
+div.modal div.downhr div.down label#daum {
+    --searchEngine-color: blue;
+}
+
+div.modal div.downhr div.down label#bing {
+    --searchEngine-color: yellow;
+}
+
+div.modal div.downhr div.down label#zum {
+    --searchEngine-color: skyblue;
+}
+
+/*
+미디어쿼리
+*/
 @media (prefers-color-scheme: dark) {
     /* dark mode인 경우의 CSS */
     div.modalBody {
         background-color: rgb(33, 33, 33);
     }
-    h2#modalTitle {
-        color: white;
-    }
-    h3.modalCategory {
-        color: white;
-    }
-    p.modalDescription {
+    div.modal h2#title {
         color: white;
     }
     div.modal {
         background-color: rgba(255, 255, 255, 0.4);
+    }
+    div.hr {
+        color: white;
+    }
+    div.modal div.downhr div.right {
+        color: white;
+    }
+    div.modal div.downhr div.down label {
+        color: white;
+    }
+    div.modal div.modalFooter button.backBtn {
+        background-color: rgb(33, 33, 33);
+        border: 0.2vw solid white;
+        color: white;
+    }
+
+    /*
+    메인 - 카테고리 이미지
+    */
+    div.modal div.modalInbox img#generalSetting,
+    div.modal div.modalInbox img#clockSetting,
+    div.modal div.modalInbox img#weatherSetting,
+    div.modal div.modalInbox img#internetSetting {
+        filter: invert(100%) sepia(100%) saturate(10%) hue-rotate(211deg)
+            brightness(103%) contrast(104%);
+    }
+    div.modal div.modalInbox p.subtitle {
+        color: white;
+    }
+    div.modal div#generalSetting {
+        --inbox-border-color: white;
+    }
+    div.modal h3#updateWait {
+        color: white;
     }
 }
 
@@ -170,17 +347,36 @@ div.modal input.modalBtn:hover {
     div.modalBody {
         background-color: rgb(255, 255, 255);
     }
-
-    h2#modalTitle {
+    div.modal h2#title {
         color: black;
     }
-    h3.modalCategory {
-        color: black;
-    }
-    p.modalDescription {
-        color: black;
-    }
-    div.modal{
+    div.modal {
         background-color: rgba(0, 0, 0, 0.4);
+    }
+    div.modal div.modalInbox p.subtitle {
+        color: black;
+    }
+    div.hr {
+        color: black;
+    }
+    div.modal div.downhr div.right {
+        color: black;
+    }
+    div.modal div.downhr div.down label {
+        color: black;
+    }
+    div.modal div.modalFooter button.backBtn {
+        background-color: white;
+        border: 0.2vw solid black;
+        color: black;
+    }
+    div.modal div#generalSetting {
+        --inbox-border-color: black;
+    }
+    div.modal h3#updateWait {
+        color: black;
+    }
+    div.modal div.downhr div.down label#google {
+        --searchEngine-color: black;
     }
 }

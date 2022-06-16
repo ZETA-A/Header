@@ -25,79 +25,198 @@
             <div class="center">
                 <div class="modal">
                     <div class="modalBody">
-                        <div id="overflow">
-                            <h2 id="modalTitle">설정</h2>
-                            <h3 class="modalCategory">유저정보</h3>
-                            <div id="modalHR">
-                                <form style="width: 100%; height: 100%">
-                                    <div id="modalLeft">
-                                        <p class="modalDescription">이름</p>
-                                    </div>
-                                    <div id="modalRight">
-                                        <input
-                                            id="nameInput"
-                                            type="text"
-                                            placeholder="이름을 입력해주세요"
-                                            required
+                        <div class="main">
+                            <h2 id="title">설정</h2>
+                            <div id="category">
+                                <div id="first">
+                                    <div class="modalInbox" id="generalSetting">
+                                        <img
+                                            src="./image/modalIcon/general.png"
+                                            alt="일반 설정 이미지"
+                                            class="modalInboxImg"
+                                            id="generalSetting"
                                         />
+                                        <p class="subtitle" id="generalSetting">
+                                            일반
+                                        </p>
                                     </div>
-                                </form>
-                            </div>
-                            <h3 class="modalCategory">시계</h3>
-                            <div id="modalHR">
-                                <div id="modalLeft">
-                                    <p class="modalDescription">24시간 형식</p>
+                                    <div class="modalInbox" id="clockSetting">
+                                        <img
+                                            src="./image/modalIcon/clock.png"
+                                            alt="시계 설정 이미지"
+                                            class="modalInboxImg"
+                                            id="clockSetting"
+                                        />
+                                        <p class="subtitle" id="clockSetting">
+                                            시계
+                                        </p>
+                                    </div>
                                 </div>
-                                <div id="modalRight">
-                                    <label class="switch">
-                                        <input id="timeSet24" type="checkbox" />
-                                        <span class="slider round"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <h3 class="modalCategory">날씨(업데이트 예정)</h3>
-                            <div id="modalHR">
-                                <div id="modalLeft">
-                                    <p class="modalDescription">위치정보이용</p>
-                                </div>
-                                <div id="modalRight">
-                                    <label class="switch">
-                                        <input type="checkbox" />
-                                        <span class="slider round"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div id="modalHR">
-                                <div id="modalLeft">
-                                    <p class="modalDescription">기상청 선택</p>
-                                </div>
-                                <div id="modalRight">
-                                    <select name="" id="">
-                                        <option value="koreaWeatherGov">
-                                            한국 기상청
-                                        </option>
-                                        <option value="norwayWeatherGov">
-                                            노르웨이 기상청
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <h3 class="modalCategory">인터넷(업데이트 예정)</h3>
-                            <div id="modalHR">
-                                <div id="modalLeft">
-                                    <p class="modalDescription">
-                                        검색엔진 선택(구글 네이버 다음 줌)
-                                    </p>
-                                </div>
-                                <div id="modalRight">
-                                    <label class="switch">
-                                        <input type="checkbox" />
-                                        <span class="slider round"></span>
-                                    </label>
+                                <div id="second">
+                                    <div class="modalInbox" id="weatherSetting">
+                                        <img
+                                            src="./image/modalIcon/weather.png"
+                                            alt="날씨 설정 이미지"
+                                            class="modalInboxImg"
+                                            id="weatherSetting"
+                                        />
+                                        <p class="subtitle" id="weatherSetting">
+                                            날씨
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="modalInbox"
+                                        id="internetSetting"
+                                    >
+                                        <img
+                                            src="./image/modalIcon/internet.png"
+                                            alt="인터넷 설정 이미지"
+                                            class="modalInboxImg"
+                                            id="internetSetting"
+                                        />
+                                        <p
+                                            class="subtitle"
+                                            id="internetSetting"
+                                        >
+                                            인터넷
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <button class="modalBtn" id="saveBtn">저장</button>
+                        <div class="general" hidden>
+                            <h2 id="title">일반</h2>
+                            <div class="hr">
+                                <div class="right">별명</div>
+                                <div class="left">
+                                    <input type="text" class="inputText" />
+                                </div>
+                            </div>
+                            <div class="modalFooter">
+                                <button class="backBtn">← 이전</button>
+                            </div>
+                        </div>
+                        <div class="clockSetting" hidden>
+                            <h2 id="title">시계</h2>
+                            <h3 id="updateWait">업데이트 준비 중</h3>
+                            <div class="modalFooter">
+                                <button class="backBtn">← 이전</button>
+                            </div>
+                        </div>
+                        <div class="weather" hidden>
+                            <h2 id="title">날씨</h2>
+                            <h3 id="updateWait">업데이트 준비 중</h3>
+                            <div class="modalFooter">
+                                <button class="backBtn">← 이전</button>
+                            </div>
+                        </div>
+                        <div class="internet" hidden>
+                            <h2 id="title">인터넷</h2>
+                            <div class="downhr">
+                                <div class="right">사용할 검색엔진</div>
+                                <div class="left"></div>
+                                <div class="down">
+                                    <input
+                                        type="radio"
+                                        name="searchEngine"
+                                        value="google"
+                                        id="google"
+                                    />
+                                    <label id="google" for="google"
+                                        ><img
+                                            src="./image/browserIcon/googleIcon.png"
+                                            alt="구글"
+                                        />
+                                        구글</label
+                                    >
+                                    <input
+                                        type="radio"
+                                        name="searchEngine"
+                                        value="naver"
+                                        id="naver"
+                                    />
+                                    <label id="naver" for="naver"
+                                        ><img
+                                            src="./image/browserIcon/naverIcon.png"
+                                            alt="네이버"
+                                        />
+                                        네이버</label
+                                    >
+                                    <input
+                                        type="radio"
+                                        name="searchEngine"
+                                        value="daum"
+                                        id="daum"
+                                    />
+                                    <label id="daum" for="daum"
+                                        ><img
+                                            src="./image/browserIcon/daumIcon.png"
+                                            alt="다음"
+                                        />
+                                        다음</label
+                                    >
+                                    <input
+                                        type="radio"
+                                        name="searchEngine"
+                                        value="bing"
+                                        id="bing"
+                                    />
+                                    <label id="bing" for="bing"
+                                        ><img
+                                            src="./image/browserIcon/bingIcon.png"
+                                            alt="빙"
+                                        />
+                                        빙</label
+                                    >
+                                    <input
+                                        type="radio"
+                                        name="searchEngine"
+                                        value="zum"
+                                        id="zum"
+                                    />
+                                    <label id="zum" for="zum"
+                                        ><img
+                                            src="./image/browserIcon/zumIcon.png"
+                                            alt="줌"
+                                        />
+                                        줌</label
+                                    >
+                                </div>
+                            </div>
+                            <div class="hr">
+                                <div class="right">1번 바로가기</div>
+                                <div class="left">
+                                    <input
+                                        type="text"
+                                        class="inputText"
+                                        id="browserOne"
+                                    />
+                                </div>
+                            </div>
+                            <div class="hr">
+                                <div class="right">2번 바로가기</div>
+                                <div class="left">
+                                    <input
+                                        type="text"
+                                        class="inputText"
+                                        id="browserTwo"
+                                    />
+                                </div>
+                            </div>
+                            <div class="hr">
+                                <div class="right">3번 바로가기</div>
+                                <div class="left">
+                                    <input
+                                        type="text"
+                                        class="inputText"
+                                        id="browserThree"
+                                    />
+                                </div>
+                            </div>
+                            <div class="modalFooter">
+                                <button class="backBtn">← 이전</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="searchModal">
