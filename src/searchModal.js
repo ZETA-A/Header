@@ -6,13 +6,7 @@ const searchInput = document.querySelector(
     "div.container div.searchModal div.searchBody input"
 );
 
-function loadSearchModal() {
-    let settingDB = JSON.parse(localStorage.getItem("settingDB"));
-}
-
 function setSearchModal() {
-    loadSearchModal();
-
     searchModalBtn.addEventListener("click", () => {
         searchModal.classList.toggle("show");
 
@@ -30,6 +24,20 @@ function setSearchModal() {
             }
         }
     });
+
+    searchInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            searchEnter(event, searchInput.value);
+        }
+    });
+}
+
+function searchEnter(event, input) {
+    let settingDB = JSON.parse(localStorage.getItem("settingDB"));
+    event.preventDefault();
+    let link = settingDB[3].browserSearch + input;
+    console.log(link);
+    location.href = link;
 }
 
 export default setSearchModal;

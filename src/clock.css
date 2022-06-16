@@ -1,4 +1,4 @@
-div#clock {
+div.container div#clock {
     margin: 0%;
     padding: 0%;
     color: white;
