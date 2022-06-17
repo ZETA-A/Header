@@ -1,21 +1,22 @@
-# <img src="public/icons/icon_48.png" width="45" align="left"> Momentum
+# <img src="public/icons/icon_48.png" width="45" align="left"> Header
 
-My Chrome Extension
+한국형 한국형 크롬 메인 시작화면입니다.  
+간단한 기능과 시계기능을 중심으로 만들어졌습니다.
 
-## Features
+## 기능
 
-- Feature 1
-- Feature 2
+-   간단한 날씨확인기능
+-   깔끔한 UI
+-   한 줄 응원멘트
 
-## Install
+## 설치방법
 
 [**Chrome** extension]() <!-- TODO: Add chrome extension link inside parenthesis -->
 
-## Contribution
+## 기여자
 
-Suggestions and pull requests are welcomed!.
+제타
 
 ---
 
 This project was bootstrapped with [Chrome Extension CLI](https://github.com/dutiyesh/chrome-extension-cli)
-
