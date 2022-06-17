@@ -185,20 +185,6 @@ div.modal div#generalSetting {
     margin-bottom: 1vw;
 }
 
-div.modal div#clockSetting {
-    --inbox-border-color: blue;
-    margin-bottom: 1vw;
-}
-
-div.modal div#weatherSetting {
-    --inbox-border-color: orange;
-    margin-right: 1vw;
-}
-
-div.modal div#internetSetting {
-    --inbox-border-color: purple;
-}
-
 /*
 메인 - 카테고리 이미지
 */
@@ -337,6 +323,20 @@ div.modal div.downhr div.down label#zum {
     div.modal div#generalSetting {
         --inbox-border-color: white;
     }
+
+    div.modal div#clockSetting {
+        --inbox-border-color: white;
+        margin-bottom: 1vw;
+    }
+
+    div.modal div#weatherSetting {
+        --inbox-border-color: white;
+        margin-right: 1vw;
+    }
+
+    div.modal div#internetSetting {
+        --inbox-border-color: white;
+    }
     div.modal h3#updateWait {
         color: white;
     }
@@ -378,5 +378,22 @@ div.modal div.downhr div.down label#zum {
     }
     div.modal div.downhr div.down label#google {
         --searchEngine-color: black;
+    }
+    div.modal div#generalSetting {
+        --inbox-border-color: black;
+    }
+
+    div.modal div#clockSetting {
+        --inbox-border-color: black;
+        margin-bottom: 1vw;
+    }
+
+    div.modal div#weatherSetting {
+        --inbox-border-color: black;
+        margin-right: 1vw;
+    }
+
+    div.modal div#internetSetting {
+        --inbox-border-color: black;
     }
 }
