@@ -18,6 +18,9 @@
             "browserOne": "",
             "browserTwo": "",
             "browserThree": ""
+        },
+        {
+            "csatMode" : "0 or 1"
         }
     ]
 }
