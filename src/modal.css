@@ -80,6 +80,10 @@ div.modal h3#updateWait {
     font-size: calc(15px + 1.5vw);
 }
 
+div.modal span#updateWait {
+    font-size: calc(5px + 0.5vw);
+}
+
 /*
 왼쪽 오른쪽 나눌 때 사용하는거
 */
@@ -91,7 +95,7 @@ div.modal div.hr {
 
 div.modal div.hr div.right {
     width: 50%;
-    font-size: calc(10px + 0.5vw);
+    font-size: calc(15px + 0.5vw);
 }
 
 div.modal div.hr div.left {
@@ -99,7 +103,7 @@ div.modal div.hr div.left {
 }
 
 div.modal div.downhr div.right {
-    font-size: calc(10px + 0.5vw);
+    font-size: calc(15px + 0.5vw);
     width: 50%;
 }
 
@@ -126,10 +130,6 @@ div.modal div.left input.inputText {
     background-color: rgb(233, 233, 233);
     text-align: center;
 }
-
-/*
-인풋(날짜) - 디자인
-*/
 
 /*
 버튼 - 디자인
@@ -206,6 +206,50 @@ div.modal div.modalInbox p.subtitle {
     font-size: calc(10px + 1vw);
     width: 100%;
     text-align: center;
+}
+
+/*
+시계 - 12시간형식 24시간형식 나타내는 인박스
+*/
+div.modal div.clockSetting h2#title {
+    margin-bottom: 5vw;
+}
+
+div.modal div.clockSetting div#clockDisplayFlex {
+    display: flex;
+    justify-content: center;
+}
+
+div.modal div.clockSetting label {
+    color: var(--inbox-border-color);
+    cursor: pointer;
+    border: 1px solid var(--inbox-border-color);
+    border-radius: 3vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+}
+
+div.modal div.clockSetting label p#timeSpan {
+    font-size: calc(10px + 2vw);
+    font-weight: 700;
+}
+
+div.modal div.clockSetting label p#timeP {
+    font-size: calc(10px + 1vw);
+}
+
+div.modal div.clockSetting input[type="radio"] {
+    display: none;
+}
+
+div.modal div.clockSetting input[type="radio"]:checked + label {
+    border: 0.3vw solid #0085ff;
+}
+
+div.modal div.clockSetting label {
+    margin-right: 1vw;
 }
 
 /*
@@ -340,6 +384,9 @@ div.modal div.downhr div.down label#zum {
     div.modal h3#updateWait {
         color: white;
     }
+    div.modal div.clockSetting label {
+        --inbox-border-color: white;
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -394,6 +441,13 @@ div.modal div.downhr div.down label#zum {
     }
 
     div.modal div#internetSetting {
+        --inbox-border-color: black;
+    }
+
+    div.modal div.clockSetting label {
+        color: black;
+    }
+    div.modal div.clockSetting label {
         --inbox-border-color: black;
     }
 }

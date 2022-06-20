@@ -8,6 +8,7 @@ let userObject = new Object();
 let clockObject = new Object();
 let weatherObject = new Object();
 let browserObject = new Object();
+let otherObject = new Object();
 const localStorage = window.localStorage;
 
 /*
@@ -38,8 +39,10 @@ function settingNameEnter(arg) {
     browserObject.browserOne = "undefined";
     browserObject.browserTwo = "undefined";
     browserObject.browserThree = "undefined";
+
+    otherObject.csatMode = "0";
     if (arg === "Enter") {
-        settingList.push(userObject, clockObject, weatherObject, browserObject);
+        settingList.push(userObject, clockObject, weatherObject, browserObject, otherObject);
         localStorage.setItem("settingDB", JSON.stringify(settingList));
     }
 }

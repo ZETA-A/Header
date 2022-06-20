@@ -4,7 +4,7 @@
  */
 function getGeolocation() {
     let settingDB = JSON.parse(localStorage.getItem("settingDB"));
-    if (settingDB[2].weatherEnable === "0") {
+    if (settingDB[2].weatherEnable === "1") {
         console.log("날씨활성화됨");
         if (navigator.geolocation) {
             const geolocation = navigator.geolocation;
@@ -27,6 +27,10 @@ function getGeolocation() {
         } else {
             console.log("GPS를 지원하지 않는 기종");
         }
+    } else {
+        console.log(
+            "위치서비스사용안함, 날씨 서비스 업데이트 예정, 비활성화 됨"
+        );
     }
 }
 

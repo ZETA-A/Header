@@ -99,6 +99,15 @@ const internetModalThree = document.querySelector(
     "div.modal div.internet div.hr input#browserThree"
 );
 
+// Modal 시계 바로가기
+const clockModalTimeSet12 = document.querySelector(
+    "div.modal div.clockSetting input#timeSet12"
+);
+
+const clockModalTimeSet24 = document.querySelector(
+    "div.modal div.clockSetting input#timeSet24"
+);
+
 function setSettingModal() {
     mainModalBtn.addEventListener("click", () => {
         mainModal.classList.toggle("show");
@@ -127,6 +136,7 @@ function setSettingModal() {
     clockModalBackBtn.addEventListener("click", () => {
         mainModalMain.hidden = false;
         clockModalMain.hidden = true;
+        saveClock();
     });
 
     weatherModalBackBtn.addEventListener("click", () => {
@@ -210,6 +220,13 @@ function loadSettingModal() {
     internetModalOne.value = settingDB[3].browserOne;
     internetModalTwo.value = settingDB[3].browserTwo;
     internetModalThree.value = settingDB[3].browserThree;
+
+    // 시계 페이지 형식 로드
+    if (settingDB[1].time24 === "0") {
+        clockModalTimeSet12.checked = true;
+    } else if (settingDB[1].time24 === "1") {
+        clockModalTimeSet24.checked = true;
+    }
 }
 
 function saveGeneral() {
@@ -229,6 +246,15 @@ function saveInternet() {
     settingDB[3].browserTwo = internetModalTwo.value;
     settingDB[3].browserThree = internetModalThree.value;
 
+    localStorage.setItem("settingDB", JSON.stringify(settingDB));
+}
+
+function saveClock() {
+    let settingDB = JSON.parse(localStorage.getItem("settingDB"));
+    let clockValue = document.querySelector(
+        'div.modal div.clockSetting input[name="timeSet"]:checked'
+    );
+    settingDB[1].time24 = clockValue.value;
     localStorage.setItem("settingDB", JSON.stringify(settingDB));
 }
 
