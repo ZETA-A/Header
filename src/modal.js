@@ -108,6 +108,8 @@ const clockModalTimeSet24 = document.querySelector(
     "div.modal div.clockSetting input#timeSet24"
 );
 
+const refreshSite = document.querySelector("div.modal refresh");
+
 function setSettingModal() {
     mainModalBtn.addEventListener("click", () => {
         mainModal.classList.toggle("show");
@@ -192,6 +194,10 @@ function setSettingModal() {
             mainModalMain.hidden = true;
             internetModalMain.hidden = false;
         }
+    });
+
+    refreshSite.addEventListener("click", () => {
+        location.reload();
     });
 
     loadSettingModal();

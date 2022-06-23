@@ -6,7 +6,7 @@ import settingNameEnter from "./setting";
 import changeGreeting from "./greeting";
 import setSettingModal from "./modal";
 import setBackgroundImage from "./backgroundImg";
-import getGeolocation from "./geolocation";
+//import getGeolocation from "./geolocation";
 import dbChecksum from "./dbChecksum";
 import setShortcut from "./shortcut";
 import setSearchModal from "./searchModal";
@@ -38,7 +38,7 @@ const errorImg =
     try {
         if (settingDB[0].savefile === "1") {
             dbChecksum();
-            getGeolocation();
+            // getGeolocation();
             setBackgroundImage();
             setShortcut();
             document.querySelector("div#setting-container").remove();
